@@ -29,14 +29,14 @@
   "testling": {
     "files": "test/*.js",
     "browsers": {
-      "ie": [ "6..9", "latest" ],
+      "ie": [ 6, 7, 8, 9, "latest" ],
       "ff": [ 3.5, 10, 20, "latest", "nightly" ],
       "chrome": [ 10, 20, "latest", "canary" ],
       "safari": [ 4, 5.1, "latest" ],
       "opera": [ 10, "latest", "next" ],
       "iphone": [ 6, "latest" ],
       "ipad": [ 6, "latest" ],
-      "android": "latest"
+      "android": [ "latest" ]
     }
   }
 }
