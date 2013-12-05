@@ -1,0 +1,40 @@
+{
+  "name": "elementize",
+  "version": "0.0.0",
+  "description": "Convert HTML into an array of DOM Elements",
+  "main": "index.js",
+  "scripts": {
+    "test": "testling"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mmckegg/elementize.git"
+  },
+  "keywords": [
+    "element",
+    "parse",
+    "html",
+    "dom"
+  ],
+  "author": "Matt McKegg",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "9882bf921b5ab0a0fe6057e0d3981edffbbc4bd2",
+  "bugs": {
+    "url": "https://github.com/mmckegg/elementize/issues"
+  },
+  "devDependencies": {
+    "tape": "~2.3"
+  },
+  "testling": {
+    "files": "test/*.js",
+    "ie": [ "6..9", "latest" ],
+    "ff": [ 3.5, 10, 20, "latest", "nightly" ],
+    "chrome": [ 10, 20, "latest", "canary" ],
+    "safari": [ 4, 5.1, "latest" ],
+    "opera": [ 10, "latest", "next" ],
+    "iphone": [ 6, "latest" ],
+    "ipad": [ 6, "latest" ],
+    "android": "latest"
+  }
+}
