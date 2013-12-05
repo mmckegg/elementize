@@ -1,3 +1,4 @@
+require('es5-shim')
 var test = require('tape')
 var elementize = require('../')
 
