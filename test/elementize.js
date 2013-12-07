@@ -53,6 +53,20 @@ test('ignore doctype', function(t){
   t.end()
 })
 
+test('handle node list', function(t){
+  var html = 'Test 123 <span>Stuff</span> more text'
+  var div = document.createElement('div')
+  div.innerHTML = html
+
+  var elements = elementize(div.childNodes)
+  t.equal(elements[0].nodeName, '#text')
+  t.equal(elements[1].nodeName, 'SPAN')
+  t.equal(elements[2].nodeName, '#text')
+  t.equal(toHTML(elements).toLowerCase(), html.toLowerCase())
+  t.end()
+})
+
+
 function toHTML(elements){
   var html = ''
   for (var i=0;i<elements.length;i++){
@@ -64,5 +78,5 @@ function toHTML(elements){
       html += host.innerHTML
     }
   }
-  return html
+  return html.replace(/\r\n/g, '')
 }

@@ -1,9 +1,15 @@
 module.exports = function(html){
-  if (typeof html === 'string'){
+  if (typeof html === 'string'){ // HTML
     return parse(html)
-  } else if (Array.isArray(html)){
+  } else if (Array.isArray(html)){ // Array
     return html
-  } else {
+  } else if (html.length != null){ // NodeList
+    var result = []
+    for (var i=0;i<html.length;i++){
+      result.push(html[i])
+    }
+    return result
+  } else if (html.nodeType) { // Node
     if (html.nodeName === '#document'){
       return [html.documentElement]
     } else {
@@ -74,8 +80,8 @@ function getRootNodes(html){
     } catch (ex) {
       var fakeHead = document.createElement('body')
       fakeHead.innerHTML = headMatch[2]
-      for (var i=0;i<fakeHead.children.length;i++){
-        headElement.appendChild(fakeHead.children[i])
+      for (var i=0;i<fakeHead.childNodes.length;i++){
+        headElement.appendChild(fakeHead.childNodes[i])
       }
     }
     result.push(headElement)
