@@ -32,6 +32,7 @@ function parse(html){
     while (current){
       result.push(current)
       current = current.nextSibling
+      wrapper.removeChild(result[result.length-1])
     }
 
     return result
