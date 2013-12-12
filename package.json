@@ -1,6 +1,6 @@
 {
   "name": "elementize",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Convert HTML into an array of DOM Elements",
   "main": "index.js",
   "scripts": {
