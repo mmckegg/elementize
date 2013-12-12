@@ -23,3 +23,9 @@ elements[0].nodeName //= #text
 elements[1].nodeName //= SPAN
 elements[2].nodeName //= #text
 ```
+
+```js
+var elementize = require('elementize')
+var element = elementize.first('  <div>first element, text nodes ignored</div>  <div>Extra</div>')
+element.outerHTML //= <div>first element, text nodes ignored</div>
+```

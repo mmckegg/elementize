@@ -41,6 +41,13 @@ test('text nodes with content', function(t){
   t.end()
 })
 
+test('first element', function(t){
+  var html = 'Test 123 <span>Stuff</span> more text'
+  var element = elementize.first(html)
+  t.equal(element.outerHTML, '<span>Stuff</span>')
+  t.end()
+})
+
 test('parse multiple divs', function(t){
   var html = '<div><span>Test</span></div><div>Another</div>'
   t.equal(toHTML(elementize(html)).toLowerCase(), html.toLowerCase())

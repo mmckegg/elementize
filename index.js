@@ -18,6 +18,16 @@ module.exports = function(html){
   }
 }
 
+module.exports.first = function(html){
+  var elements = module.exports(html)
+  for (var i=0;i<elements.length;i++){
+    if (elements[i].nodeType === 1){
+      return elements[i]
+    }
+  }
+  return elements[0]
+}
+
 function parse(html){
   var root = getRoot(html)
   if (root){
