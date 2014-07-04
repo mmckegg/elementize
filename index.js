@@ -1,5 +1,7 @@
 module.exports = function(html){
-  if (typeof html === 'string'){ // HTML
+  if (!html){
+    return []
+  } else if (typeof html === 'string'){ // HTML
     return parse(html)
   } else if (Array.isArray(html)){ // Array
     return html
